@@ -13,7 +13,7 @@ require('dotenv').config()
 // Heroku
 
 const connection = mysql.createConnection({
-    host: process.env.CLEARDB_DATABASE_URL,
+    host: process.env.DATABASE_HOST,
     user: process.env.USER_HEROKU,
     password: process.env.PASSWORD_HEROKU,
     database: "heroku_073aa483c0acda9"
