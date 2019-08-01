@@ -78,12 +78,10 @@ app.put("/product/:id", function(req, res) {
     let product_id = req.params.id;
     let name = req.body.name;
     if (!product_id || !name) {
-        return res
-            .status(400)
-            .send({
-                error: name,
-                message: "Please provide name and product_id"
-            });
+        return res.status(400).send({
+            error: name,
+            message: "Please provide name and product_id"
+        });
     }
     db.query(
         "UPDATE products SET name = ? WHERE id = ?",
@@ -121,6 +119,5 @@ app.delete("/product/:id", function(req, res) {
     });
 });
 
-app.listen(4000, () => {
-    console.log("Server listening on port - 4000 -");
-});
+const port = process.env.PORT || 5000;
+app.listen(port, () => console.log(`\n---Running on ${port}----\n`));
