@@ -1,31 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-const AddProjectForm = ({setProducts, products}) => {
-    const [name, setName] = useState("");
-
-    const headers = {
-        "Content-Type": "application/json",
-        "Access-Control-Origin": "*"
-    };
-
-    const data = {
-        name: name
-    };
-
-    const addProject = () => {
-        fetch("http://localhost:5000/product", {
-            method: "POST",
-            headers: headers,
-            body: JSON.stringify(data)
-        })
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(data) {
-                console.log(data);
-            });
-    };
-
+const AddProjectForm = ({ addProject, setName, name }) => {
     return (
         <div>
             <input
