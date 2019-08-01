@@ -119,5 +119,5 @@ app.delete("/product/:id", function(req, res) {
     });
 });
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 app.listen(port, () => console.log(`\n---Running on ${port}----\n`));
